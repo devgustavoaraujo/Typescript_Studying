@@ -220,7 +220,42 @@
   // -==-==-==-==                       => Tipo Any <=                  ==-==-==-==-==-==-==-==-==-==- //
   // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
   
-  //https://www.youtube.com/watch?v=I0wYYGwiDNY&list=PLb2HQ45KP0Wsk-p_0c6ImqBAEFEY-LU9H&index=23
+  const a: any = 888;
+  const b: any = ["Gustavo"]
+  const result = a + b
+  //console.log(result)
+  
+  // => Exemplo 02: Quando o Tipo ANY é Inferido Implicitamente
+
+  let frase;
+  frase = "Olá Mundo"
+  //console.log(frase)
+
+  // => Exemplo 03: Quando devemos usar o Tipo Any?
+
+  const formulario:{[campoFormulario: string]: any} = {
+    nome: "Gustavo",
+    Sobrenome: "Santana",
+    Idade: "21"
+  }
+  //console.log(formulario)
+  
+  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
+  // -==-==-==-==                       => Tipo Unknown <=              ==-==-==-==-==-==-==-==-==-==- //
+  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
+
+  //DIFERENÇA PARA O ANY:
+  //ANY: NÃO VAI VERIFICAR O TIPO DA VARIÁVEL OU FUNÇÃO, OCASIONANDO ERROS.
+  //UNKNOWN: VAI FAZER UMA VERIFICAÇÃO ANTES DE REALIZAR UMA OPERAÇÃO
+  //USAR MAIS UNKNOWN AO INVÉS DO ANY
+
+  //Exemplo 01: Tipo Unknown
+
+  let valorVariavel: unknown;
+  valorVariavel = true; //SEM ERRO
+  valorVariavel = 123; //SEM ERRO
+  valorVariavel = []; //SEM ERRO
+  valorVariavel = "Olá, tudo bem?" //SEM ERRO
 
   
 }
