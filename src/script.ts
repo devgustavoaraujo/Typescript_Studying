@@ -123,83 +123,105 @@
   //console.log(pessoa3[0])
 
   // => Exemplo 03 - Outra forma de usar tuplas em Typescript (com Labels)
+  
+  let dadosPessoa: [nome: string, posicao: string, idade: number] = ["Gustavo", "São Paulo", 180]
+  //console.log(dadosPessoa)
+
+  //Exemplo 04 - Usando Tuplas com Spread Operator
+
   let listaFrutas: [string, ...string[]] = ["Maça", "Banana", "Uva", "Laranja"]  
   //console.log(...listaFrutas)
   
   //EXISTEM DIVERSOS TIPOS DE FRUTAS, USA ...STRING PARA QUANDO NÃO SABE A QUANTIDADE
   //..STRING JÁ INDICA QUE E UMA SEQUÊNCIA DE STRINGS
 
-  //Exemplo 04 - Usando Tuplas com Spread Operator
+  // => Exemplo 05 - Lista Heterogênea de Tupla
 
+  let totalFrutas: [number, boolean, ...string[]] = [5, true, ...listaFrutas]
+  //console.log(totalFrutas)
 
-  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
-  // -==-==-==-==-==-==-==-==-==          => OBJETOS <=           ==-==-==-==-==-==-==-==-==-==-==-==- //
-  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
+  // => Exemplo 06 - Uso de função com Tuplas
 
-  let carro: {
-    nome: string;
-    ano: number;
-    preco: number;
-  };
-
-  carro = { nome: "Toyota", ano: 2019, preco: 80000 };
-  //console.log(carro)
-
-  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
-  // -==-==-==-==-==-==-==-==-==         => FUNCTIONS <=          ==-==-==-==-==-==-==-==-==-==-==-==- //
-  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
-
-  function multiplicarNumeros(num1: number, num2: number) {
-    return num1 * num2;
+  function listarPessoas(nomes: string[], idades: number[]){
+    return [...nomes, ...idades]
   }
-  //console.log(multiplicarNumeros(2, 5))
+  let resultado = listarPessoas(["Gustavo", "Matheus"], [32, 22])
+  //console.log(resultado)
 
-  const exibirMensagem = (): void => {
-    console.log("Olá, mundo!");
-  };
-  //exibirMensagem()
+  // => Exemplo 07 - Labeled Tuples com Spread Operator em uma Função
+  type Nome =
+        | [primeiroNome: string, sobrenome: string] 
+        | [primeiroNome: string, nomeMeio: string, sobrenome: string]
 
-  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
-  // -==-==-==-==-==-==-==-==-==          => TUPLAS <=            ==-==-==-==-==-==-==-==-==-==-==-==- //
-  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
-
-  let pessoa: [string, number] = ["Gustavo", 30];
-  let profissao: [string, number, string, number] = [
-    "Gustavo",
-    21,
-    "Maria",
-    22,
-  ];
+  function criarPessoa(...nome: Nome){
+    return [...nome]
+  }      
+  //console.log(criarPessoa("Gustavo", "Santana", "Araujo"))
 
   // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
-  // -==-==-==-==-==-==-==-==-==                => ENUMS <=            ==-==-==-==-==-==-==-==-==-==- //
+  // -==-==-==-==                       => Tipo Enum <=                ==-==-==-==-==-==-==-==-==-==- //
   // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
-
-  enum Cor {
-    Vermelho,
-    Azul,
+  
+  //ENUM TIPO NÚMERICO (RECOMENDAVEL)
+  enum Idiomas {
+    Portugues,
+    Espanhol,
+    Ingles,
+    Frances
   }
+  //console.log(Idiomas)
+
+  //ENUM TIPO STRING (NÃO RECOMENDAVEL)
+  enum Dias {
+    Segunda = "Seg",
+    Terca = "Ter",
+    Quarta = "Qua",
+    Quinta = "Quin",
+    Sexta = "Sex",
+    Sabado = "Sab",
+    Domingo = "Dom"
+  }
+  //console.log(Dias)
+  //console.log(Dias.Segunda)
+
+  // => Exemplo 02: Usando Enum com Const
+
+  const enum Comida {
+    Hamburguer,
+    Massa,
+    Pizza,
+    Sushi,
+    Churrasco
+  }
+
+  function comida(c: Comida){
+    return "Comidas muito Apetitosas!"
+  }
+  //console.log(comida(Comida.Pizza))
+
+  // => Exemplo 03: Quando usar o Enum?
+
+  enum Tarefa{
+    Todo,
+    Progress,
+    Done
+  }
+  const concluidaTarefa = {
+    id: 1,
+    status: Tarefa.Done,
+    descricao: "Parabéns, Tarefa Concluida com Sucesso!"
+  }
+
+  if(concluidaTarefa.status === Tarefa.Done) {
+      //console.log("Enviar E-mail: Tarefa Concluída!")
+  }
+
+  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
+  // -==-==-==-==                       => Tipo Any <=                  ==-==-==-==-==-==-==-==-==-==- //
+  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
+  
+  //https://www.youtube.com/watch?v=I0wYYGwiDNY&list=PLb2HQ45KP0Wsk-p_0c6ImqBAEFEY-LU9H&index=23
+
+  
 }
 
-//MODULO 3
-{
-  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
-  // -==-==-==-==-==-==       => CONDICIONAIS COM BOOLEAN & NOT <=        ==-==-==-==-==-==-==-==-==- //
-  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
-
-  let concluido: boolean = false;
-  if (!concluido) {
-    //!atrás da Chama e o NOT, Não Concluido Faça!
-    //console.log("Tarefa foi Concluida!")
-  } else {
-    //console.log("Tarefa não Concluida")
-  }
-
-  let permissao: boolean = true;
-  if (!permissao) {
-    //!NOT
-    //console.log("Você não tem Permissão para Dirigir!")
-  } else {
-    //console.log("Você tem Permissão para Dirigir!")
-  }
-}
