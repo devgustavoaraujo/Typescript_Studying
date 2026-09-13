@@ -107,6 +107,31 @@
   }
 
   funcaoLinguagens(linguagensArray);
+
+  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
+  // -==-==-==-==                       => Tipo Tupla <=                ==-==-==-==-==-==-==-==-==-==- //
+  // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
+
+  // => Exemplo 01 - Uso Simples de Tuplas em Typescript
+  let pessoa2: [string, string, number] = ["Gustavo", "SP", 21]
+  pessoa2 = ["Gustavo", "São Paulo", 180] 
+  //console.log(pessoa2)
+
+  // => Exemplo 02 - Acessando o valor da Tupla
+  let pessoa3: [string, string, number]
+  pessoa3 = ["Gustavo", "São Paulo", 180]
+  //console.log(pessoa3[0])
+
+  // => Exemplo 03 - Outra forma de usar tuplas em Typescript (com Labels)
+  let listaFrutas: [string, ...string[]] = ["Maça", "Banana", "Uva", "Laranja"]  
+  //console.log(...listaFrutas)
+  
+  //EXISTEM DIVERSOS TIPOS DE FRUTAS, USA ...STRING PARA QUANDO NÃO SABE A QUANTIDADE
+  //..STRING JÁ INDICA QUE E UMA SEQUÊNCIA DE STRINGS
+
+  //Exemplo 04 - Usando Tuplas com Spread Operator
+
+
   // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
   // -==-==-==-==-==-==-==-==-==          => OBJETOS <=           ==-==-==-==-==-==-==-==-==-==-==-==- //
   // -==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==- //
