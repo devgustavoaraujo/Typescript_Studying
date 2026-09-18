@@ -1,3 +1,0 @@
-function Post() {
-  return <></>;
-}

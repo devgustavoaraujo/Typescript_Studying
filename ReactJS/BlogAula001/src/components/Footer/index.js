@@ -1,3 +1,4 @@
+import "./style.css";
 //FORMA 2
 
 export default function Footer() {
