@@ -1,14 +1,11 @@
 import { useState } from "react";
 
 function App() {
-  //AO INVES DE PASSAR O PROPS, PODE PASSAR A PRÓPRIA ESTRUTURA!
-  //DESESTRUTURAÇÃO
   const [number, setNumber] = useState(0);
   const text = number < 0 ? "Negativo" : "Positivo";
   return (
     <main>
       <h1>{number}</h1>
-      <p></p>
       <h2
         style={{
           color: "white",

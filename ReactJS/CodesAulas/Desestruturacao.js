@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function App() {
+function App(props) {
   //AO INVES DE PASSAR O PROPS, PODE PASSAR A PRÓPRIA ESTRUTURA!
   //DESESTRUTURAÇÃO
   const [number, setNumber] = useState(0);
@@ -8,7 +8,6 @@ function App() {
   return (
     <main>
       <h1>{number}</h1>
-      <p></p>
       <h2
         style={{
           color: "white",
