@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <aside>
+      <h1>Conversor Dolar p/ Real</h1>
+      <input type="number" name="Valor" id="valorEntrada" />
+      <button onclick="realDolar()">Converter</button>
+      <div id="result"></div>
+    </aside>
+  </body>
+
+  <script>
+    const realDolar = () => {
+      const divResult = document.querySelector("#result");
+      const divConversor = document.querySelector("#valorEntrada");
+      divResult.innerHTML = "Funcionando!";
+
+      const valorDolar = parseFloat(divConversor.value);
+      const dolar = 5.22;
+
+      if (isNaN(valorDolar)) {
+        divResult.innerHTML = `Digite algum Valor!`;
+        return;
+      }
+
+      const resultado = valorDolar / dolar;
+      divResult.innerHTML = `Valor Convertido com Sucesso ${resultado.toFixed(2)}`;
+    };
+  </script>
+</html>

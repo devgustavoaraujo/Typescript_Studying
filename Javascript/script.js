@@ -143,6 +143,5 @@
   const meuNome = (nome) => {
     return nome;
   };
-
   //console.log(meuNome("Gustavo"));
 }
