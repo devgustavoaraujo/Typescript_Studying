@@ -47,7 +47,29 @@
     nome: "Gustavo",
     idade: "21",
     casado: false ? "Casado" : "Não Casado", //OPERADOR TERNÁRIO
-    conjuge: null ? "Maria" : casado,
+    conjuge: null,
   };
-  console.log(dadosUsuarios.conjuge);
+  //console.log(dadosUsuarios.conjuge);
+  //console.log(dadosUsuarios.tempo) //UNDEFINED
+
+  /*ARRAY => MATRIZ*/
+
+  const arrayUsuarios = [
+    {
+      nome: "Gustavo",
+      idade: "21",
+      casado: false ? "Casado" : "Não Casado", //OPERADOR TERNÁRIO
+      conjuge: null,
+    },
+    {
+      nome: "Daniel",
+      idade: "22",
+      casado: true ? "Casado" : "Não Casado", //OPERADOR TERNÁRIO
+      conjuge: null,
+    },
+  ];
+
+  const numerosNovos = [12, 13, 14, 15, 16];
+  const pessoasNovas = ["João", "Maria", "Helena", "Madalena"];
+  console.log(pessoasNovas[1]); //VERIFICANDO POSIÇÃO
 }
