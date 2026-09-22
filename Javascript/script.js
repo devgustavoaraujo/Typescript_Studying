@@ -10,10 +10,6 @@
   const numberInt = 30;
   let variavelLet = "Variável Alterável";
 
-  console.log(variavelConst);
-  console.log(numberInt);
-  console.log(variavelLet);
-
   /*TIPOS DE DADOS*/
 
   const textosStrings = "Hello World";
@@ -26,5 +22,32 @@
   ${textosStrings}
   `;
 
-  console.log(stringCrase);
+  /*NUMBERS*/
+
+  const numero = 200 + 20 - (20 * 20) / 2;
+  const numberFloat = 1.1;
+
+  /*BOOLEAN*/
+
+  const variavelTrue = true;
+  const variavelFalse = false;
+
+  /*OBJECT*/
+
+  const dadosUsuario = {
+    nome: "Gustavo",
+    idade: "21",
+    casado: false ? "Casado" : "Não Casado", //OPERADOR TERNÁRIO
+  };
+  //console.log(dadosUsuario.nome, dadosUsuario.idade, dadosUsuario.casado);
+
+  /*NULL & UNDEFINED*/
+
+  const dadosUsuarios = {
+    nome: "Gustavo",
+    idade: "21",
+    casado: false ? "Casado" : "Não Casado", //OPERADOR TERNÁRIO
+    conjuge: null ? "Maria" : casado,
+  };
+  console.log(dadosUsuarios.conjuge);
 }
