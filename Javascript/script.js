@@ -73,3 +73,21 @@
   const pessoasNovas = ["João", "Maria", "Helena", "Madalena"];
   console.log(pessoasNovas[1]); //VERIFICANDO POSIÇÃO
 }
+
+//IF E ELSE
+
+{
+  notaAluno = 3;
+  if (notaAluno > 6) {
+    console.log("Aluno Aprovado!");
+  } else {
+    console.log("Reprovado");
+  }
+
+  //3 = ; Comparando Valores e Tipos
+  if (notaAluno === 3) {
+    console.log("Valor e Tipo Compatível");
+  } else {
+    console.log("Valor ou Tipo não Compatível!");
+  }
+}
