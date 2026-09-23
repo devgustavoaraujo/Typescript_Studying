@@ -3,6 +3,7 @@ for ([inicialização]; [condição]; [expressão final];){
     código aqui
 }
 */
+
 // I = 0, ENQUANTO MENOR QUE 6, I += 1
 for (let i = 0; i < 6; i++) {
   //console.log(i);
@@ -22,6 +23,7 @@ const users = ["Gustavo", "Ana", "Joana", "Maria"];
 for (let i = 0; i < users.length; i++) {
   console.log(`${i + 1}. ${users[i]}`);
 }
+
 setTimeout(() => {
   //console.log("Macaco");
 }, 3000);
