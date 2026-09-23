@@ -17,3 +17,14 @@ for (let i = 0; i < 10; i++) {
 }
 
 console.log("Fim da Lista");
+
+setTimeout(() => {
+  console.log("Macaco");
+}, 3000);
+
+for (let i = 0; i < 3; i++) {
+  setTimeout((i) => {
+    i = "macaco";
+    console.log(i);
+  }, 3000);
+}
