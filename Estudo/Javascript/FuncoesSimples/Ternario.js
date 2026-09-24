@@ -39,6 +39,26 @@ const transferBank = () => {
 };
 //console.log(transferBank());
 
+const bankerTransfer = (saldo, valor) => {
+  return saldo > valor
+    ? "TransfeRência Autorizada"
+    : "Transferência NÃO Autorizada!";
+};
+console.log(bankerTransfer(200, 400));
+
 const nome = "Gustavo";
 const isAdult = true;
 console.log(`${nome} ${isAdult ? "Não" : ""} é criança`);
+
+const hours = 1;
+
+console.log(
+  "Está dé",
+  hours >= 0 && hours < 6
+    ? "Madrugada"
+    : hours >= 6 && hours < 12
+      ? "Manhã"
+      : hours >= 12 && hours < 18
+        ? "Tarde"
+        : "Noite",
+);
