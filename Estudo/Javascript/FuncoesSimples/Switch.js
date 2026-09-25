@@ -63,13 +63,16 @@ console.log("[5] 💻 Ver Linguagens");
 console.log("[0] ❌ Sair");
 
 prompt.question("> Selecione o que desejar fazer", (answer) => {
-  switch (answer) {
+  switch (
+    answer //AVALIE "OLHE PARA"
+  ) {
     case "1": {
+      //CASO SEJA
       const date = new Date();
       const day = date.getDay();
       const month = date.getMonth() + 1; //JAVASCRIPT AS COISAS COMEÇAM EM 0, NÃO EXISTE MÊS 0 ENTÃO COLOCA +1
       const year = date.getFullYear();
-      console.log(`Hoje é dia ${day}, do mês de ${month} no ano de ${year}`);
+      console.log(`Hoje é dia ${day}/${month}/${year}`);
       break;
     }
     case "2": {
@@ -77,17 +80,33 @@ prompt.question("> Selecione o que desejar fazer", (answer) => {
       const hour = hours.getHours();
       const minutes = hours.getMinutes();
       const seconds = hours.getSeconds();
-      console.log(`Agora são ${hour}h ${minutes}m ${seconds} `);
-      break;
+      console.log(`Agora são ${hour}:${minutes}:${seconds} `);
+      break; //PARE
     }
     case "3": {
+      console.log("🐔 Galinha");
+      console.log("🐄 Vaca");
+      console.log("🐈 Gato");
+      console.log("🐶 Cachorro");
       break;
     }
     case "4": {
+      console.log("🍕 Pizza");
+      console.log("🍰 Bolo");
+      console.log("🍜 Macarrão");
+      console.log("🍧 Sorvete");
       break;
     }
     case "5": {
+      console.log("Javascript");
+      console.log("Java");
+      console.log("C++");
+      console.log("Rust");
       break;
+    }
+    default: {
+      //SE NÃO FOR NENHUM DESSES // ELSE
+      console.log("Programa Encerrando...");
     }
   }
   prompt.close();
