@@ -50,8 +50,28 @@ function factorial(number) {
 //PARAMETROS OPCIONAIS
 
 function createTag(name, prefix, suffix) {
-  if (prefix) {
+  if (prefix && suffix) {
+    //FALSE E FALSE PULA
+    return `${prefix} ${name} ${suffix}`; //BATEU NO RETURN SAÍ DA FUNÇÃO
+  } else if (prefix) {
+    return `${prefix} ${name}`;
+  }
+  return name;
+}
+const tag = createTag("Gustavo", "[Desenvolvedor]", "Dev");
+console.log(tag);
+
+//VALOR PADRÃO DOS PARAMETROS
+//CASO EU NÃO PASSE UM VALOR, JÁ TERÁ UM NÚMERO DEFINIDO
+const pow = (number, exponent = 2) => {
+  return number ** exponent;
+};
+console.log(pow(2, 8));
+
+function greet2(name, log = false) {
+  const text = `Seja bem vindo(a) ${name}`;
+  if (log) {
+    console.log(text);
+    return text;
   }
 }
-
-createTag("Gustavo");
