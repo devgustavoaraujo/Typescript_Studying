@@ -17,3 +17,9 @@ console.log(par(5));
 console.log(dogEmoji);
 
 //IMPORT USANDO DEFAULT
+import Modulo1 from "./Modulo1.js";
+console.log(Modulo1.porcentagem(10));
+
+//IMPORT DIRETO
+
+import "./Hello.js";

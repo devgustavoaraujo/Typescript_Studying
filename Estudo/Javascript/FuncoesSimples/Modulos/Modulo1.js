@@ -38,7 +38,10 @@ function porcentagem(a) {
   } else if (a > 100) {
     return "Digite um Número menor que 100!";
   } else {
-    return `${a}% de R$100,00 = ${soma}`;
+    return `${a}% de R$100,00 = ${soma.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    })}`;
   }
 }
 
