@@ -28,3 +28,4 @@ users.forEach((item, index, array) => {
     );
   }
 });
+console.log(total);
