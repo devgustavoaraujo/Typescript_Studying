@@ -21,7 +21,6 @@ users.forEach((item, index, array) => {
   //console.log(item);
   //console.log(index);
   //console.log(array);
-
   if (item.age < 18) {
     console.log(
       `O(a) Cliente ${item.name}, Posição ${index + 1} é menor de idade!`,

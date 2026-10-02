@@ -38,9 +38,13 @@ function gerarRelatorioPedidos(listaPedidos, statusBuscado) {
 
   if (pedidosFiltrados == 0) {
     return `Error 404: Nenhum outro Pedido encontrado com o Status: ${statusBuscado}`;
-  } else if (pedidosFiltrados != ["pendente", "cancelado", "entregue"]) {
-    return `Nenhum Pedido Encotnrado com o Status ${statusBuscado} Verifique a Ortográfia!`;
   }
+  const pedidosTotal = listaPedidos.reduce((acumulador, pedido) => {
+    return acumulador + pedido.valor;
+  }, 0);
+
+  console.log(`Valor Total dos Pedidos: ${pedidosTotal}`);
+
   return pedidosFiltrados.map((item) => {
     const precoFormatado = item.valor.toLocaleString("pt-br", {
       style: "currency",
@@ -49,9 +53,7 @@ function gerarRelatorioPedidos(listaPedidos, statusBuscado) {
     return `Pedido do(a) Cliente ${item.cliente} no valor de ${precoFormatado} Está como ${item.status}`;
   });
 }
-
-console.log(gerarRelatorioPedidos(pedidos, "temp"));
-
+console.log(gerarRelatorioPedidos(pedidos, "entregue"));
 //FILTER
 
 //   listaPedidos.filter((item) => {
