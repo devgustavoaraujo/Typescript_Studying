@@ -36,24 +36,26 @@ function gerarRelatorioPedidos(listaPedidos, statusBuscado) {
     (item) => item.status === statusBuscado,
   );
 
-  if (pedidosFiltrados == 0) {
+  if (pedidosFiltrados.length == 0) {
     return `Error 404: Nenhum outro Pedido encontrado com o Status: ${statusBuscado}`;
   }
-  const pedidosTotal = listaPedidos.reduce((acumulador, pedido) => {
+  const pedidosTotal = pedidosFiltrados.reduce((acumulador, pedido) => {
     return acumulador + pedido.valor;
   }, 0);
 
   console.log(`Valor Total dos Pedidos: ${pedidosTotal}`);
 
-  return pedidosFiltrados.map((item) => {
-    const precoFormatado = item.valor.toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
-    });
-    return `Pedido do(a) Cliente ${item.cliente} no valor de ${precoFormatado} Está como ${item.status}`;
-  });
+  return pedidosFiltrados
+    .map((item) => {
+      const precoFormatado = item.valor.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+      return `Pedido do(a) Cliente ${item.cliente} no valor de ${precoFormatado} Está como ${item.status}`;
+    })
+    .join("\n");
 }
-console.log(gerarRelatorioPedidos(pedidos, "entregue"));
+console.log(gerarRelatorioPedidos(pedidos, "pendente"));
 //FILTER
 
 //   listaPedidos.filter((item) => {
