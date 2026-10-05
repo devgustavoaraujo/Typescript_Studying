@@ -32,9 +32,7 @@ const pedidos = [
 ];
 
 function gerarRelatorioPedidos(listaPedidos, statusBuscado) {
-  const pedidosFiltrados = listaPedidos.filter(
-    (item) => item.status === statusBuscado,
-  );
+  const pedidosFiltrados = listaPedidos.filter((item) => item.status === statusBuscado);
 
   if (pedidosFiltrados.length == 0) {
     return `Error 404: Nenhum outro Pedido encontrado com o Status: ${statusBuscado}`;
