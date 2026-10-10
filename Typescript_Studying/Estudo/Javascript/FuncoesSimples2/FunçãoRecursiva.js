@@ -1,6 +1,17 @@
-function countdown(number) {
-  for (let i = 0; i > number; i--) {
-    console.log(i);
-  }
+// function countDown(number) {
+//   if (number > 10) return;
+//   setTimeout(() => {
+//     console.log(number);
+//     countDown(number + 1);
+//   }, 1000);
+// }
+// countDown(1);
+
+function somar(num) {
+  if (num < 10) return;
+  setTimeout(() => {
+    console.log(` ${num}`);
+    somar(num + 1);
+  }, 1000);
 }
-countdown(5);
+somar(1);
