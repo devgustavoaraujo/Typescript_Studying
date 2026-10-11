@@ -1,0 +1,11 @@
+{
+  "name": "typescript_studying",
+  "version": "1.0.0",
+  "description": "Repositório criado para documentar minha jornada de estudos em **JavaScript** e **React JS**, focando desde os fundamentos da linguagem até a construção de aplicações web modernas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
