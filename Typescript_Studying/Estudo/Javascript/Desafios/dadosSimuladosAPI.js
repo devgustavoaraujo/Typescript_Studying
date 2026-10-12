@@ -22,23 +22,23 @@ function enviarDados() {
         altura: 180,
       },
     ];
-    setTimeout(() => {
-      console.log("Dados enviados com Sucesso!");
-      resolve(dados);
-    }, 3000);
+    resolve(dados);
   });
 }
 async function receberDados(idBuscado) {
-  const dadosDosUsuarios = await enviarDados();
-  const filterUsers = dadosDosUsuarios.filter((t) => t.id === idBuscado);
-  setTimeout(() => {
-    console.log("Aguardando Dados do Servidor...");
-  }, 3000);
+  console.log("Processando Dados...");
 
-  setTimeout(() => {
-    filterUsers.map((n) => {
-      console.log(`Nome do Usuário ${n.nome} Idade: ${n.idade} Altura: ${n.altura}CM`);
+  const dadosDosUsuarios = await enviarDados().catch(() => {
+    console.log("Erro Nenhum Dado Recebido!");
+  });
+  const filterUsers = dadosDosUsuarios.filter((t) => t.id === idBuscado);
+
+  filterUsers.map((n) => {
+    setTimeout(() => {
+      console.log(`Nome do Usuário: ${n.nome} Idade: ${n.idade} Altura: ${n.altura}CM`);
     }, 3000);
   });
 }
 receberDados(2);
+
+//AJUSTADO!
