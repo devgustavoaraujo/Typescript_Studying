@@ -35,3 +35,35 @@
 //button.style.background = "red";
 
 //EVENTOS
+
+const button = document.querySelector("#submit-button");
+const items = document.querySelector(".items");
+const myForm = document.querySelector("#my-form");
+
+const errorMessage = document.querySelector(".msg");
+
+const inputEmail = document.querySelector("#email");
+const inputName = document.querySelector("#name");
+
+button.addEventListener("click", function (event) {
+  event.preventDefault();
+  const nameValue = inputName.value;
+  const emailValue = inputEmail.value;
+
+  if (nameValue === "" || emailValue === "") {
+    errorMessage.textContent = "Preencha os Campos!";
+    errorMessage.classList = "error"; //PEGANDO ESTILO DO CSS
+    setTimeout(() => {
+      errorMessage.textContent = "";
+      errorMessage.classList = "";
+    }, 3000);
+  }
+  const li = document.createElement("li");
+  li.classList = "item";
+  li.innerHTML = `${nameValue}<br> ${emailValue}`;
+  items.appendChild(li);
+
+  //   items.children[0].textContent = inputEmail.value;
+  //   items.children[1].textContent = inputName.value;
+  //myForm.style.background = "red";
+});
