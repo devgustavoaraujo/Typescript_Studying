@@ -1,0 +1,72 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 255, 0.213);
+}
+
+input {
+  border-color: transparent;
+  border-radius: 3px;
+  width: 300px;
+  height: 35px;
+}
+
+#forms {
+  background-color: rgba(0, 0, 255, 0.282);
+  padding: 1em;
+  border-radius: 0.5em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+}
+#formssection {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#resultcss {
+  display: none;
+  position: absolute;
+  top: 0.8em;
+  color: red;
+  font-weight: 800;
+
+  display: flex;
+  align-items: center;
+}
+
+button {
+  border-color: transparent;
+  border-radius: 3px;
+  width: 308px;
+  height: 35px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(1.05);
+}
+
+.image {
+  background-image: url("imagem.png"); /* O caminho da imagem fica aqui */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 0.3s ease; /* Opcional: efeito suave ao mudar */
+}
+#buttonDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#buttonLogin {
+  background-color: #48ff0067;
+}
