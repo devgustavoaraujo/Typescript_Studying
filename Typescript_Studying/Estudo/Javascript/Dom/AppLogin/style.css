@@ -14,6 +14,11 @@ input {
   height: 35px;
 }
 
+h1 {
+  margin-bottom: -0.2em;
+  font-size: 28px;
+}
+
 #forms {
   background-color: rgba(0, 0, 255, 0.282);
   padding: 1em;
@@ -34,13 +39,14 @@ input {
 }
 #resultcss {
   display: none;
-  position: absolute;
+  height: 5px;
   top: 0.8em;
   color: red;
   font-weight: 800;
 
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 button {
@@ -69,4 +75,10 @@ button:active {
 
 #buttonLogin {
   background-color: #48ff0067;
+  display: none;
+}
+
+.menu {
+  font-size: 35px;
+  color: red;
 }
